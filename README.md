@@ -1,4 +1,4 @@
-# Black Moon Design
+# Black Moon Designs
 
 ![](media/images/someimage--.png?raw=true)
 
