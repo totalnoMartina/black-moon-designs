@@ -22,6 +22,7 @@ body {
 
 }
 
+
 p {
     color: #ef9d50;
 }
@@ -213,4 +214,8 @@ a:hover {
     background-color: #FFBFBE;
     color: #965D30;
     text-decoration: none;
+}
+
+.navbar-brand {
+    color: #493a3a !important;
 }
