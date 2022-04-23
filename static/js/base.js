@@ -13,4 +13,10 @@ $(document).ready(function() {
 
         $('.animated-icon3').toggleClass('open');
     });
+    // A function to close navbar while clicking anywhere in document - issue- doesnt change shape when clicked outside navbar
+    $(function() {
+        $(document).click(function(event) {
+            $('.navbar-collapse').collapse('hide');
+        });
+    });
 });
