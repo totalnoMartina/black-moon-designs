@@ -4,6 +4,10 @@ from datetime import datetime
 
 class Category(models.Model):
     """ A category of the products with a user-friendly name """
+
+    class Meta:
+        verbose_name_plural = 'Categories'
+
     name = models.CharField(max_length=250)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 

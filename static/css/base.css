@@ -18,8 +18,12 @@ body {
     background: -o-linear-gradient(to top right, #965d30, #b47353, #e8a49a, #ffbfbe) no-repeat;
     background-size: cover;
     font-family: 'Libre Bodoni', serif;
-    color: #FFE9CF;
+    color: #f7cfa9;
 
+}
+
+p {
+    color: #ef9d50;
 }
 
 /* Icon 1 */
