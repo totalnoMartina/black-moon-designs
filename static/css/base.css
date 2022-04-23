@@ -19,12 +19,23 @@ body {
     background-size: cover;
     font-family: 'Libre Bodoni', serif;
     color: #f7cfa9;
-
 }
 
 
+.card__img:hover {
+    opacity: 0.7 !important;
+}
+
 p {
     color: #ef9d50;
+}
+
+.product-details-container {
+    background-color: white;
+}
+
+h4 {
+    color: #cfc8c6;
 }
 
 .overlay {
