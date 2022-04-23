@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@1,600&display=swap');
+
+body {
+    font-family: 'Libre Bodoni', serif;
+    background-color: #965D30;
+    color: #c989ad;
+}
+
+a {
+    font-size: 2.2rem;
+    background-color: #3d220f;
+    color: #c9b9ab;
+}
+
+a:hover {
+    background-color: #c9b9ab;
+    color: #3d220f;
+    text-decoration: none;
+}
