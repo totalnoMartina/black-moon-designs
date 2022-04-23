@@ -20,13 +20,14 @@
 * [Deployment](#deployment)
 * [Credits](#credits)
 
-# Project Overview
+# Project Purpose - Overview
 
 A website that promotes handmade macrame items for sale, made by a inspiring polish girl Marika from Poland
 
 # User Experience Design
 
-Color pallete is chosen by the macrame creator, boho, earthy notes in colours
+Color palette is chosen by the macrame creator, boho, earthy notes in colours.
+ image of the palette
 
 # Credits
 

@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@1,600&display=swap');
 
 html {
-    background: #FFBFBE;
+    background-image: url('/media/macrame.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 body {
@@ -187,12 +189,12 @@ body {
 
 a {
     font-size: 2.2rem;
-    background-color: #A1695B;
-    color: #FFBFBE;
+    background-color: #c18a7c;
+    color: #493a3a;
 }
 
 a:hover {
     background-color: #FFBFBE;
-    color: #3d220f;
+    color: #965D30;
     text-decoration: none;
 }
