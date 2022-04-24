@@ -243,3 +243,16 @@ a:hover {
 .btn:hover {
     background-color: #f3ab99;
 }
+
+.update-link,
+.remove-item {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.update-link:hover,
+.remove-item:hover {
+    background-color: #f3ab99;
+    color: #493a3a;
+
+}
