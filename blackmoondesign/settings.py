@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # 'allauth.socialaccount.providers.facebook',
     'mainapp',
     'macrames',
+    'bag',
 
 ]
 
