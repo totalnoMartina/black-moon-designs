@@ -96,21 +96,7 @@
                         <a href="{% url 'account_login' %}" class="rounded-left p-1">Login</a>
                     </li>
                     {% endif %}
-                    <li class="nav-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-item" href="{% url 'view_bag' %}">
-                            <div class="text-right mt-1">
-                                <div><i class="fas fa-shopping-bag"></i>
-                                </div>
-                                <p class="my-0">
-                                    {% if grand_total %}
-                                    €{{ grand_total|floatformat:2 }}
-                                    {% else %}
-                                    €0.00
-                                    {% endif %}
-                                </p>
-                            </div>
-                        </a>
-                    </li>
+
                 </ul>
                 <!-- Links -->
             </div>
@@ -123,9 +109,40 @@
             <h5 class="my-2">Free delivery on orders over €{{ free_delivery_threshold }}!</h5>
         </div>
     </div>
+    <br>
+    <br>
     {% if messages %}
-    <div class="message-container"></div>
+    <div class="message-container">
+        {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </div>
     {% endif %}
+
+    <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-item" href="{% url 'view_bag' %}">
+        <div class="text-right mx-3">
+            <div><i class="fas fa-shopping-bag"></i>
+            </div>
+            <p class="my-0">
+                {% if grand_total %}
+                €{{ grand_total|floatformat:2 }}
+                {% else %}
+                €0.00
+                {% endif %}
+            </p>
+        </div>
+    </a>
+
 
     {% block page_header %}
     {% endblock %}
@@ -136,6 +153,9 @@
 
     {% block postloadjs %}
     <script type="text/javascript">
+        $('.toast').toast('show');
+
+
         // Disable +/- buttons outside 1-99 range
         function handleEnableDisable(itemId) {
             var currentValue = parseInt($(`#id_qty_${itemId}`).val());

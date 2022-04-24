@@ -254,5 +254,21 @@ a:hover {
 .remove-item:hover {
     background-color: #f3ab99;
     color: #493a3a;
+}
 
+/* ------------------------------- bootstrap toasts */
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
 }
