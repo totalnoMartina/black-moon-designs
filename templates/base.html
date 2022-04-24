@@ -51,7 +51,7 @@
             </a>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-left">
                 <form method="GET" action="{% url 'macrames' %}">
-                    <div class="input-group w-100">
+                    <div class="input-group w-75">
                         <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
                         <div class="input-group-append">
                             <button class="form-control btn btn-black border border-black rounded-0" type="submit">
@@ -99,7 +99,7 @@
                     <li class="nav-item">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-item" href="{% url 'view_bag' %}">
                             <div class="text-right mt-1">
-                                <div><i class="fa fa-shopping-bag"></i>
+                                <div><i class="fas fa-shopping-bag"></i>
                                 </div>
                                 <p class="my-0">
                                     {% if grand_total %}
@@ -135,6 +135,49 @@
     {% endblock %}
 
     {% block postloadjs %}
+    <script type="text/javascript">
+        // Disable +/- buttons outside 1-99 range
+        function handleEnableDisable(itemId) {
+            var currentValue = parseInt($(`#id_qty_${itemId}`).val());
+            var minusDisabled = currentValue < 2;
+            var plusDisabled = currentValue > 98;
+            $(`#decrement-qty_${itemId}`).prop('disabled', minusDisabled);
+            $(`#increment-qty_${itemId}`).prop('disabled', plusDisabled);
+        }
+
+        // Ensure proper enabling/disabling of all inputs on page load
+        var allQtyInputs = $('.qty_input');
+        for (var i = 0; i < allQtyInputs.length; i++) {
+            var itemId = $(allQtyInputs[i]).data('item_id');
+            handleEnableDisable(itemId);
+        }
+
+        // Check enable/disable every time the input is changed
+        $('.qty_input').change(function() {
+            var itemId = $(this).data('item_id');
+            handleEnableDisable(itemId);
+        });
+
+        // Increment quantity
+        $('.increment-qty').click(function(e) {
+            e.preventDefault();
+            var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+            var currentValue = parseInt($(closestInput).val());
+            $(closestInput).val(currentValue + 1);
+            var itemId = $(this).data('item_id');
+            handleEnableDisable(itemId);
+        });
+
+        // Decrement quantity
+        $('.decrement-qty').click(function(e) {
+            e.preventDefault();
+            var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+            var currentValue = parseInt($(closestInput).val());
+            $(closestInput).val(currentValue - 1);
+            var itemId = $(this).data('item_id');
+            handleEnableDisable(itemId);
+        });
+    </script>
     {% endblock %}
 
 </body>

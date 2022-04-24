@@ -235,7 +235,8 @@ a:hover {
     color: #493a3a;
 }
 
-.navbar-brand {
+.navbar-brand,
+.fa-shopping-bag {
     color: #493a3a !important;
 }
 
