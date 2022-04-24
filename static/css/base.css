@@ -38,6 +38,10 @@ h4 {
     color: #cfc8c6;
 }
 
+h5 {
+    color: #886e67;
+}
+
 .overlay {
     height: 100%;
     width: 100%;
@@ -215,15 +219,19 @@ h4 {
 
 
 a {
-    font-size: 2.2rem;
-    background-color: #c18a7c;
+    font-size: 2rem;
+    background-color: #f3ab99;
     color: #493a3a;
 }
 
 a:hover {
-    background-color: #FFBFBE;
-    color: #965D30;
+    background-color: #493a3a;
+    color: #f3ab99;
     text-decoration: none;
+}
+
+i:hover {
+    color: #493a3a;
 }
 
 .navbar-brand {
