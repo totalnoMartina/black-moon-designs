@@ -27,7 +27,7 @@ body {
 }
 
 p {
-    color: #ef9d50;
+    color: #965d30;
 }
 
 .product-details-container {
@@ -36,6 +36,7 @@ p {
 
 h4 {
     color: #cfc8c6;
+    font-size: smaller;
 }
 
 h5 {
@@ -230,10 +231,14 @@ a:hover {
     text-decoration: none;
 }
 
-i:hover {
+.fa-shopping-bag:hover {
     color: #493a3a;
 }
 
 .navbar-brand {
     color: #493a3a !important;
+}
+
+.btn:hover {
+    background-color: #f3ab99;
 }
