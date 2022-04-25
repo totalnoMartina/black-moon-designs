@@ -45,10 +45,12 @@
         <nav class="navbar navbar-light lighten-4 mb-4 rounded fixed-top text-right">
             <!-- Navbar brand -->
             <a class="navbar-brand p-3 rounded bg-transparent" href="{% url 'home' %}">
-                <h1>Black Moon Designs
-                    <!-- <img src="/media/logo.jpg" style="height: 3.7rem; width: 3.7rem;"> -->
+                <h1>
+                    <img src="/media/logo-cact-ray-moon.png" style="height: 6rem; width: 6rem;" class="rounded-circle">
+                    Black Moon Designs
                 </h1>
             </a>
+
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-left">
                 <form method="GET" action="{% url 'macrames' %}">
                     <div class="input-group w-75">
@@ -130,7 +132,7 @@
     {% endif %}
 
     <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-item" href="{% url 'view_bag' %}">
-        <div class="text-right mx-3">
+        <div class="text-right m-3">
             <div><i class="fas fa-shopping-bag"></i>
             </div>
             <p class="my-0">
