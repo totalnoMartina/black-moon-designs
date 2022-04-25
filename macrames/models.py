@@ -32,4 +32,5 @@ class Product(models.Model):
     created_at = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
+        """ A method to show the name of the product  """
         return self.name
