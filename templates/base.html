@@ -40,20 +40,22 @@
 </head>
 
 <body>
-    <header>
+    <header class="container">
         <!--Navbar-->
         <nav class="navbar navbar-light lighten-4 mb-4 rounded fixed-top text-right">
             <!-- Navbar brand -->
             <a class="navbar-brand p-3 rounded bg-transparent" href="{% url 'home' %}">
-                <h1>
-                    <img src="/media/logo-cact-ray-moon.png" style="height: 6rem; width: 6rem;" class="rounded-circle">
+                <h1 class="logo">
+                    <img src="/media/logo-cact-ray-moon.png" style="height: 6rem; width: 6rem;" class="rounded-circle" alt="logo of creator">
                     Black Moon Designs
                 </h1>
             </a>
-
+            <div class="col">
+                <!-- Add column for search bar to move -->
+            </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-left">
                 <form method="GET" action="{% url 'macrames' %}">
-                    <div class="input-group w-75">
+                    <div class="input-group w-50">
                         <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
                         <div class="input-group-append">
                             <button class="form-control btn btn-black border border-black rounded-0" type="submit">
@@ -66,7 +68,7 @@
                 </form>
             </div>
             <!-- Collapse button -->
-            <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20" aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler first-button ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20" aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="animated-icon1 p-3"><span></span><span></span><span></span></div>
             </button>
 
@@ -135,7 +137,7 @@
         <div class="text-right m-3">
             <div><i class="fas fa-shopping-bag"></i>
             </div>
-            <p class="my-0">
+            <p class="my-0 bag-total">
                 {% if grand_total %}
                 €{{ grand_total|floatformat:2 }}
                 {% else %}
