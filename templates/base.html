@@ -43,76 +43,78 @@
 
 <body>
     <header class="container">
-        <!--Navbar-->
-        <nav class="navbar navbar-light lighten-4 mb-4 rounded fixed-top text-right">
-            <!-- Navbar brand -->
-            <a class="navbar-brand p-3 rounded bg-transparent" href="{% url 'home' %}">
-                <h1 class="logo">
-                    <img src="/media/logo-cact-ray-moon.png" style="height: 6rem; width: 6rem;" class="rounded-circle" alt="logo of creator">
-                    Black Moon Designs
-                </h1>
-            </a>
-            <div class="col">
-                <!-- Add column for search bar to move -->
-            </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-left">
-                <form method="GET" action="{% url 'macrames' %}">
-                    <div class="input-group w-50">
-                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
-                        <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                                <span class="icon">
-                                    <i class="fas fa-search"></i>
-                                </span>
-                            </button>
+        <div class="row">
+
+
+            <!--Navbar-->
+            <nav class="navbar navbar-light lighten-4 mb-4 rounded fixed-top text-right">
+                <!-- Navbar brand -->
+                <a class="navbar-brand p-3 rounded bg-transparent" href="{% url 'home' %}">
+                    <h1 class="logo">
+                        <img src="/media/logo-stairs-moon-cact.png" style="height: 6rem; width: 6rem;" class="rounded-circle" alt="logo of creator">
+                        Black Moon Designs
+                    </h1>
+                </a>
+                <div class="col">
+                    <!-- Add column for search bar to move -->
+                </div>
+                <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-left">
+                    <form method="GET" action="{% url 'macrames' %}">
+                        <div class="input-group w-50">
+                            <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
+                            <div class="input-group-append">
+                                <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                    <span class="icon">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                </form>
-            </div>
-            <!-- Collapse button -->
-            <button class="navbar-toggler first-button ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20" aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
-                <div class="animated-icon1 p-3"><span></span><span></span><span></span></div>
-            </button>
+                    </form>
+                </div>
+                <!-- Collapse button -->
+                <button class="navbar-toggler first-button ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20" aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="animated-icon1 p-3"><span></span><span></span><span></span></div>
+                </button>
 
-            <!-- Collapsible content -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent20">
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent20">
+                    <!-- Links -->
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a href="{% url 'macrames' %}" class="rounded-left p-1">Macrame Selection</a>
+                        </li>
+                        {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                        <li class="nav-item">
+                            <a href="{% url 'admin:index' %}" class="rounded-left p-1">Management</a>
+                        </li>
+                        {% endif %}
+                        <li class="nav-item">
+                            <a href="#" class="rounded-left p-1">My Profile</a>
+                        </li>
+                        <li class=" nav-item">
+                            <a href="{% url 'account_logout' %}" class="rounded-left p-1">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item rounded">
+                            <a href="{% url 'account_signup' %}" class="rounded-left p-1">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'account_login' %}" class="rounded-left p-1">Login</a>
+                        </li>
+                        {% endif %}
 
-                <!-- Links -->
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a href="{% url 'macrames' %}" class="rounded-left p-1">Macrame Selection</a>
-                    </li>
-                    {% if request.user.is_authenticated %}
-                    {% if request.user.is_superuser %}
-                    <li class="nav-item">
-                        <a href="{% url 'admin:index' %}" class="rounded-left p-1">Management</a>
-                    </li>
-                    {% endif %}
-                    <li class="nav-item">
-                        <a href="#" class="rounded-left p-1">My Profile</a>
-                    </li>
-                    <li class=" nav-item">
-                        <a href="{% url 'account_logout' %}" class="rounded-left p-1">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item rounded">
-                        <a href="{% url 'account_signup' %}" class="rounded-left p-1">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{% url 'account_login' %}" class="rounded-left p-1">Login</a>
-                    </li>
-                    {% endif %}
-
-                </ul>
-                <!-- Links -->
-            </div>
-            <!-- Collapsible content -->
-        </nav>
-
+                    </ul>
+                    <!-- Links -->
+                </div>
+                <!-- Collapsible content -->
+            </nav>
+        </div>
     </header>
     <div id="delivery-banner" class="row text-center">
         <div class="col">
-            <h5 class="my-2">Free delivery on orders over €{{ free_delivery_threshold }}!</h5>
+            <h5 class="my-2">Delivery on orders over €{{ free_delivery_threshold }}!</h5>
         </div>
     </div>
     <br>
@@ -135,7 +137,7 @@
     </div>
     {% endif %}
 
-    <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-item" href="{% url 'view_bag' %}">
+    <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-item mt-3" href="{% url 'view_bag' %}">
         <div class="text-right m-3">
             <div><i class="fas fa-shopping-bag"></i>
             </div>
