@@ -8,11 +8,12 @@ from macrames.models import Product
 import json
 import stripe
 
+from bag.contexts import bag_contents
+
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 
 # from profiles.forms import UserProfileForm
-from bag.contexts import bag_contents
 
 
 @require_POST
