@@ -6,7 +6,7 @@ from django.conf import settings
 
 from django_countries.fields import CountryField
 
-
+from profiles.models import UserProfile
 from macrames.models import Product
 
 
