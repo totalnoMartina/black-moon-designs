@@ -3,7 +3,7 @@ from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 from macrames.models import Product
-# from profiles.models import UserProfile
+from profiles.models import UserProfile
 
 import json
 import stripe
@@ -112,8 +112,8 @@ def checkout(request):
         # Attempt to prefill the form with any info the user maintains in their profile
         if request.user.is_authenticated:
             try:
-                # profile = UserProfile.objects.get(user=request.user)
-                order_form = OrderForm(initial={
+                 profile = UserProfile.objects.get(user=request.user)
+                 order_form = OrderForm(initial={
                     'full_name': profile.user.get_full_name(),
                     'email': profile.user.email,
                     'phone_number': profile.default_phone_number,
